@@ -19,7 +19,6 @@ class CreateStaffTable extends Migration
             $table->string('jenis_kelamin');
             $table->string('username');
             $table->string('password');
-            $table->string('retype_password');
 
             $table->smallInteger('soft_delete')->default(0);
             $table->timestamps(0);

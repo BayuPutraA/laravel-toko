@@ -22,7 +22,6 @@ class CreatePembeliTable extends Migration
             $table->string('foto_ktp');
             $table->string('username');
             $table->string('password');
-            $table->string('retype_password');
 
             $table->smallInteger('soft_delete')->default(0);
             $table->timestamps(0);

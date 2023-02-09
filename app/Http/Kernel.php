@@ -63,5 +63,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+        'staff.session' => \App\Http\Middleware\StaffSession::class,
+        'pembeli.session' => \App\Http\Middleware\PembeliSession::class,
     ];
 }
