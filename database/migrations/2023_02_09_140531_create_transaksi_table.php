@@ -19,7 +19,8 @@ class CreateTransaksiTable extends Migration
             $table->foreign('id_pembeli')->references('id_pembeli')->on('pembeli');
             $table->integer('id_barang')->unsigned()->nullable();
             $table->foreign('id_barang')->references('id_barang')->on('barang');
-            $table->integer('jumlah');
+            $table->integer('jumlah_beli');
+            $table->bigInteger('total_harga');
             $table->timestamp('tanggal')->useCurrent();
             $table->integer('status')->default(0);
 

@@ -45,11 +45,13 @@ Route::group(['middleware' => 'staff.session'],function () {
     Route::get('/hapus-barang/{id}', [StaffController::class, 'hapusBarang'])->name('hapusBarang');
 
     Route::get('/konfirmasi', [StaffController::class, 'konfirmasi'])->name('konfirmasi');
+    Route::get('/konfirmasi-pembelian/{id}', [StaffController::class, 'konfirmasiPembelian'])->name('konfirmasiPembelian');
 
 });
 
 Route::group(['middleware' => 'pembeli.session'],function () {
     Route::get('/market', [PembeliController::class, 'market'])->name('market');
+    Route::post('/beli-barang', [PembeliController::class, 'beliBarang'])->name('beliBarang');
     Route::get('/history', [PembeliController::class, 'history'])->name('history');
 
 });

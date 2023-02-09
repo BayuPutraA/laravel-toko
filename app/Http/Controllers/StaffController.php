@@ -222,6 +222,28 @@ class StaffController extends Controller
     }
 
     public function konfirmasi(){
-        return view('konfirmasi');
+        $data = Transaksi::where('soft_delete', 0)
+            ->with('Barang', 'Pembeli')
+            ->orderBy('id_transaksi', 'DESC')
+            ->get();
+
+        return view('konfirmasi', ['data' => $data]);
+    }
+
+    public function konfirmasiPembelian($id){
+        $transaksi = Transaksi::find($id);
+        $transaksi->status = 1;
+
+        $barang = Barang::where('id_barang', $transaksi->id_barang)
+            ->first();
+
+        $stock_lama = $barang->stock;
+        $stock_baru = (int)$stock_lama - (int)$transaksi->jumlah_beli;
+        $barang->stock = $stock_baru;
+
+        $barang->save();
+        $transaksi->save();
+
+        return redirect('/konfirmasi');
     }
 }

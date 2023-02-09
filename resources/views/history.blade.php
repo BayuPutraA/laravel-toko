@@ -57,28 +57,15 @@
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100">
+                  @foreach($data as $d)
                     <tr class="text-gray-500">
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">Cosmetic Bundle 1</th>
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">1 Januari 2021</th>
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">3</th>
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">45</th>
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">Menunggu Staff</th>
+                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{ $d->Barang->nama }}</th>
+                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{ Carbon\Carbon::parse($d->tanggal)->format('d M Y') }}</th>
+                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{ $d->jumlah_beli }}</th>
+                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{ $d->total_harga }}</th>
+                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{ $d->status == 0 ? 'Menunggu Staff' : 'Terverifikasi' }}</th>
                     </tr>
-                    <tr class="text-gray-500">
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">Cosmetic Bundle 2</th>
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">14 Maret 2021</th>
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">5</th>
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">33</th>
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">Terverifikasi</th>                      
-                    </tr>
-                    <tr class="text-gray-500">
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">Coffee</th>
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">30 Desember 2022</th>
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">1</th>
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">15</th>
-                      <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">Terverifikasi</th>                      
-                    </tr>
-                    
+                  @endforeach
                 </tbody>
               </table>
           </div>

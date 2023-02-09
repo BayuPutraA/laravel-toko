@@ -24,33 +24,21 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-100">
+                              @foreach($data as $d)
                                 <tr class="text-gray-500">
-                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">Tono</th>                                  
-                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">Bundle Cosmetic 1</th>                                  
-                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">15</th>
-                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">3</th>
+                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{ $d->Pembeli->nama }}</th>                                  
+                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{ $d->Barang->nama }}</th>                                  
+                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{ $d->Barang->stock }}</th>
+                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{ $d->jumlah_beli }}</th>
                                   <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left flex gap-2">
-                                    <button class="ml-5 text-green-500 bg-white border border-solid border-green-500 hover:bg-green-500 hover:text-white focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-3">Konfirmasi</button>
+                                    @if($d->status == 0)
+                                    <a href="/konfirmasi-pembelian/{{ $d->id_transaksi }}" class="ml-5 text-green-500 bg-white border border-solid border-green-500 hover:bg-green-500 hover:text-white focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-3">Konfirmasi</a>
+                                    @else
+                                    <p>Sudah Dikonfirmasi</p>
+                                    @endif
                                   </th>
-                                </tr>                                
-                                <tr class="text-gray-500">
-                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">Ananta</th>                                  
-                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">Bundle Coffee 1</th>                                  
-                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">20</th>
-                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">2</th>
-                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left flex gap-2">
-                                    <button class="ml-5 text-green-500 bg-white border border-solid border-green-500 hover:bg-green-500 hover:text-white focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-3">Konfirmasi</button>
-                                  </th>
-                                </tr>                                
-                                <tr class="text-gray-500">
-                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">Raakandia</th>                                  
-                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">Set Totebag</th>                                  
-                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">30</th>
-                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">5</th>
-                                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left flex gap-2">
-                                    <button class="ml-5 text-green-500 bg-white border border-solid border-green-500 hover:bg-green-500 hover:text-white focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-3">Konfirmasi</button>
-                                  </th>
-                                </tr>                                
+                                </tr>  
+                              @endforeach                              
                             </tbody>
                           </table>
                       </div>

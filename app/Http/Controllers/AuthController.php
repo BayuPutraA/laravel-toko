@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Session;
 
 use App\Models\Staff;
+use App\Models\Pembeli;
 
 class AuthController extends Controller
 {
@@ -28,11 +29,24 @@ class AuthController extends Controller
             return redirect('/dashboard');
             
         }else if($username == "pembeli" && $password == "pembeli"){
+            
             Session::put('logged', 'pembeli');
             return redirect('/market');
 
         }else{
-            return redirect()->back()->with('error', 'Data login tidak ditemukan');
+            $pembeli = Pembeli::where('username', $username)
+                ->where('password', $password)
+                ->where('soft_delete', 0)
+                ->first();
+
+            if($pembeli){
+                Session::put('logged', 'pembeli');
+                Session::put('id_pembeli', $pembeli->id_pembeli);
+                return redirect('/market');
+
+            }else{
+                return redirect()->back()->with('error', 'Data login tidak ditemukan');
+            }
         }
     }
 
