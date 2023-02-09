@@ -7,11 +7,64 @@ use App\Models\Pembeli;
 use App\Models\Barang;
 use App\Models\Staff;
 use App\Models\Transaksi;
+use Carbon\Carbon;
 
 class StaffController extends Controller
 {
     public function dashboard(){
-        return view('dashboard');
+        $barang = Barang::where('soft_delete', 0)
+            ->get();
+
+        $all_terjual = 0;
+        $all_keuntungan = 0;
+        foreach($barang as $key => $b){
+            $total_terjual = Transaksi::where('id_barang', $b->id_barang)
+                ->where('status', 1)
+                ->where('soft_delete', 0)
+                ->sum('jumlah_beli');
+
+            $barang[$key]['terjual'] = (int)$total_terjual;
+            $keuntungan = ((int)$b->harga_jual - (int)$b->harga_beli) * (int)$total_terjual;
+
+            $all_terjual += (int)$total_terjual;
+            $all_keuntungan += (int)$keuntungan;
+        }
+
+        $now = Carbon::now();
+        $weekStartDate = $now->startOfWeek();
+        $dataTerjualHarian = [];
+        $dataKeuntunganHarian = [];
+
+        for($i = 0; $i < 7; $i++){
+            $terjual_harian = 0;
+            $keuntungan_harian = 0;
+
+            foreach($barang as $key => $b){
+                $total_terjual = Transaksi::where('id_barang', $b->id_barang)
+                    ->where('status', 1)
+                    ->where('soft_delete', 0)
+                    ->whereDate('tanggal', $weekStartDate->format('Y-m-d'))
+                    ->sum('jumlah_beli');
+    
+                $keuntungan = ((int)$b->harga_jual - (int)$b->harga_beli) * (int)$total_terjual;
+
+                $terjual_harian += (int) $total_terjual;
+                $keuntungan_harian += (int) $keuntungan;
+            }
+
+            $dataTerjualHarian[$i] = (int)$terjual_harian;
+            $dataKeuntunganHarian[$i] = (int)$keuntungan_harian;
+
+            $weekStartDate = $weekStartDate->addDays();
+        }
+
+        return view('dashboard', [
+            'barang' => $barang,
+            'all_terjual' => $all_terjual,
+            'all_keuntungan' => $all_keuntungan,
+            'dataTerjualHarian' => $dataTerjualHarian,
+            'dataKeuntunganHarian' => $dataKeuntunganHarian,
+        ]);
     }
 
     public function barang(){
