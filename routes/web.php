@@ -28,9 +28,22 @@ Route::post('/authenticate', [AuthController::class, 'authenticate'])->name('aut
 
 Route::group(['middleware' => 'staff.session'],function () {
     Route::get('/dashboard', [StaffController::class, 'dashboard'])->name('dashboard');
+
     Route::get('/staff', [StaffController::class, 'staff'])->name('staff');
+    Route::post('/tambah-staff', [StaffController::class, 'tambahStaff'])->name('tambahStaff');
+    Route::post('/edit-staff', [StaffController::class, 'editStaff'])->name('editStaff');
+    Route::get('/hapus-staff/{id}', [StaffController::class, 'hapusStaff'])->name('hapusStaff');
+
     Route::get('/pembeli', [StaffController::class, 'pembeli'])->name('pembeli');
+    Route::post('/tambah-pembeli', [StaffController::class, 'tambahPembeli'])->name('tambahPembeli');
+    Route::post('/edit-pembeli', [StaffController::class, 'editPembeli'])->name('editPembeli');
+    Route::get('/hapus-pembeli/{id}', [StaffController::class, 'hapusPembeli'])->name('hapusPembeli');
+
     Route::get('/barang', [StaffController::class, 'barang'])->name('barang');
+    Route::post('/tambah-barang', [StaffController::class, 'tambahBarang'])->name('tambahBarang');
+    Route::post('/edit-barang', [StaffController::class, 'editBarang'])->name('editBarang');
+    Route::get('/hapus-barang/{id}', [StaffController::class, 'hapusBarang'])->name('hapusBarang');
+
     Route::get('/konfirmasi', [StaffController::class, 'konfirmasi'])->name('konfirmasi');
 
 });
