@@ -34,3 +34,9 @@ Route::get('/users', function () {
 Route::get('/product', function () {
     return view('product');
 });
+Route::get('/history', function () {
+    return view('history');
+});
+Route::get('/konfirmasi', function () {
+    return view('konfirmasi');
+});
