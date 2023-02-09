@@ -25,6 +25,9 @@ Route::get('/market', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+Route::get('/staff', function () {
+    return view('staff');
+});
 Route::get('/users', function () {
     return view('users');
 });
