@@ -55,28 +55,3 @@ Route::group(['middleware' => 'pembeli.session'],function () {
     Route::get('/history', [PembeliController::class, 'history'])->name('history');
 
 });
-
-// Route::get('/login', function () {
-//     return view('login');
-// });
-// Route::get('/market', function () {
-//     return view('market');
-// });
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// });
-// Route::get('/staff', function () {
-//     return view('staff');
-// });
-// Route::get('/users', function () {
-//     return view('users');
-// });
-// Route::get('/product', function () {
-//     return view('product');
-// });
-// Route::get('/history', function () {
-//     return view('history');
-// });
-// Route::get('/konfirmasi', function () {
-//     return view('konfirmasi');
-// });
