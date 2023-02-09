@@ -31,11 +31,13 @@ Route::group(['middleware' => 'staff.session'],function () {
     Route::get('/staff', [StaffController::class, 'staff'])->name('staff');
     Route::get('/pembeli', [StaffController::class, 'pembeli'])->name('pembeli');
     Route::get('/barang', [StaffController::class, 'barang'])->name('barang');
+    Route::get('/konfirmasi', [StaffController::class, 'konfirmasi'])->name('konfirmasi');
 
 });
 
 Route::group(['middleware' => 'pembeli.session'],function () {
     Route::get('/market', [PembeliController::class, 'market'])->name('market');
+    Route::get('/history', [PembeliController::class, 'history'])->name('history');
 
 });
 
@@ -57,9 +59,9 @@ Route::group(['middleware' => 'pembeli.session'],function () {
 // Route::get('/product', function () {
 //     return view('product');
 // });
-Route::get('/history', function () {
-    return view('history');
-});
-Route::get('/konfirmasi', function () {
-    return view('konfirmasi');
-});
+// Route::get('/history', function () {
+//     return view('history');
+// });
+// Route::get('/konfirmasi', function () {
+//     return view('konfirmasi');
+// });

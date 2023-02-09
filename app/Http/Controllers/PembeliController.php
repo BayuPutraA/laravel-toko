@@ -9,4 +9,8 @@ class PembeliController extends Controller
     public function market(){
         return view('market');
     }
+
+    public function history(){
+        return view('history');
+    }
 }
