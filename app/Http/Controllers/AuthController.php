@@ -25,8 +25,12 @@ class AuthController extends Controller
 
         if($username == "staff" && $password == "staff"){
             Session::put('logged', 'staff');
-
             return redirect('/dashboard');
+            
+        }else if($username == "pembeli" && $password == "pembeli"){
+            Session::put('logged', 'pembeli');
+            return redirect('/market');
+
         }else{
             return redirect()->back()->with('error', 'Data login tidak ditemukan');
         }
