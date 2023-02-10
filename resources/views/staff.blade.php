@@ -48,7 +48,7 @@
   </div>
 
   <!-- Modal -->
-  <div class="hidden py-12 bg-gray-700 bg-opacity-75 transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0 z-50" id="modal">
+  <div class="hidden py-12 bg-gray-700 bg-opacity-75 transition duration-150 ease-in-out absolute top-0 right-0 bottom-0 left-0 z-50" id="modal">
       <div role="alert" class="container mx-auto w-11/12 md:w-2/3 max-w-lg">
           <div class="relative py-8 px-5 md:px-10 bg-white shadow-md rounded border border-gray-400">     
           <form id="my-form" method="POST" enctype="multipart/form-data">
@@ -56,15 +56,15 @@
               <input id="id_staff" name="id_staff" type="hidden" />           
               <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Input Staff</h1>
               <label for="nama" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Nama</label>
-              <input id="nama" name="nama" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />                                
+              <input id="nama" name="nama" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Masukkan Nama" />                                
               <label for="jenis_kelamin" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Jenis Kelamin</label>
-              <input id="jenis_kelamin" name="jenis_kelamin" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />                
+              <input id="jenis_kelamin" name="jenis_kelamin" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Masukkan Jenis Kelamin" />                
               <label for="username" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Username</label>
-              <input id="username" name="username" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
+              <input id="username" name="username" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Masukkan Username" />
               <label for="password" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Password</label>
-              <input id="password" name="password" type="password" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
+              <input id="password" name="password" type="password" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Password" />
               <label for="repassword" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Re-Password</label>
-              <input id="repassword" name="repassword" type="password" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />                
+              <input id="repassword" name="repassword" type="password" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Re-Password" />                
               
               <div class="flex items-center justify-start w-full">
                   <button type="submit" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm">Submit</button>

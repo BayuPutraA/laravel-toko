@@ -60,7 +60,7 @@
   </div>    
 
   <!-- Modal -->
-  <div class="hidden py-12 bg-gray-700 bg-opacity-75 transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0 z-50" id="modal">
+  <div class="hidden py-12 bg-gray-700 bg-opacity-75 transition duration-150 ease-in-out absolute top-0 right-0 bottom-0 left-0 z-50" id="modal">
       <div role="alert" class="container mx-auto w-11/12 md:w-2/3 max-w-lg">
           <div class="relative py-8 px-5 md:px-10 bg-white shadow-md rounded border border-gray-400">    
           <form id="my-form" method="POST" enctype="multipart/form-data">
@@ -68,19 +68,19 @@
               <input id="id_barang" name="id_barang" type="hidden" />            
               <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Input Barang</h1>
               <label for="nama" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Nama Barang</label>
-              <input id="nama" name="nama" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />                
+              <input id="nama" name="nama" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Masukkan Nama Barang" />                
               <label for="deskripsi" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Deskripsi Barang</label>
-              <input id="deskripsi" name="deskripsi" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
+              <input id="deskripsi" name="deskripsi" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Masukkan Deskripsi Barang" />
               <label for="jenis" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Jenis Barang</label>
-              <input id="jenis" name="jenis" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
+              <input id="jenis" name="jenis" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Masukkan Jenis Barang" />
               <label for="stock" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Stock</label>
-              <input id="stock" name="stock" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
+              <input id="stock" type="number" name="stock" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Masukkan Stock Barang" />
               <label for="harga_jual" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Harga Jual</label>
-              <input id="harga_jual" name="harga_jual" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
+              <input id="harga_jual" type="number" name="harga_jual" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Masukkan Harga Jual Barang" />
               <label for="harga_beli" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Harga Beli</label>
-              <input id="harga_beli" name="harga_beli" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
+              <input id="harga_beli" type="number" name="harga_beli" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Masukkan Harga Beli Barang" />
               <label for="gambar" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Gambar Barang</label>
-              <input id="gambar" name="gambar" type="file" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
+              <input id="gambar" name="gambar" type="file" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Foto Barang" />
               
               <div class="flex items-center justify-start w-full">
                   <button type="submit" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm">Submit</button>
